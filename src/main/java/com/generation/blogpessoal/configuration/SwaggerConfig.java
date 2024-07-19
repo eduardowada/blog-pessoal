@@ -25,7 +25,7 @@ public class SwaggerConfig {
                                 .name("Eduardo Wada")
                                 .url("https://github.com/eduardowada"))
                         .contact(new Contact()
-                                .name("Lucas Carlos")
+                                .name("Eduardo Wada")
                                 .url("https://github.com/eduardowada")
                                 .email("eduardo_wada@hotmail.com")))
                 .externalDocs(new ExternalDocumentation()
