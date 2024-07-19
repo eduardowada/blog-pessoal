@@ -14,7 +14,7 @@ public class Tema {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotNull(message = "O atributo descrição é pbrogatório")
+    @NotNull(message = "O Atributo descrição é obrigatório!")
     private String descricao;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "tema", cascade = CascadeType.REMOVE)
@@ -22,7 +22,7 @@ public class Tema {
     private List<Postagem> postagem;
 
     public Long getId() {
-        return id;
+        return this.id;
     }
 
     public void setId(Long id) {
@@ -30,10 +30,10 @@ public class Tema {
     }
 
     public String getDescricao() {
-        return descricao;
+        return this.descricao;
     }
 
-    public void setDescricao(String descricao) {
+    public void setDescricao() {
         this.descricao = descricao;
     }
 
@@ -44,4 +44,5 @@ public class Tema {
     public void setPostagem(List<Postagem> postagem) {
         this.postagem = postagem;
     }
+
 }

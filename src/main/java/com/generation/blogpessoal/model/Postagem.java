@@ -1,27 +1,28 @@
 package com.generation.blogpessoal.model;
 
+import java.time.LocalDateTime;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Size;
 import org.hibernate.annotations.UpdateTimestamp;
 
-import java.time.LocalDateTime;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 
 @Entity
 @Table(name = "tb_postagens")
 public class Postagem {
 
     @Id
-    @GeneratedValue (strategy = GenerationType.IDENTITY)
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long Id;
 
-    @NotBlank (message = "O atributo título é obrigatório!")
-    @Size (min = 5, max = 100, message = "O atributo deve ter entre 5 e 100 caracteres")
+    @NotBlank(message = "O atributo título é obrigatório!")
+    @Size(min = 5, max = 100, message = "O atributo título deve conter no mínimo 05 e no máximo 100 caracteres")
     private String titulo;
 
-    @NotBlank (message = "O atributo texto é obrigatório!")
-    @Size (min = 5, max = 1000, message = "O atributo deve ter entre 5 e 1000 caracteres")
+    @NotBlank(message = "O atributo texto é obrigatório!")
+    @Size(min = 10, max = 1000, message = "O atributo texto deve conter no mínimo 10 e no máximo 1000 caracteres")
     private String texto;
 
     @UpdateTimestamp
@@ -36,15 +37,15 @@ public class Postagem {
     private Usuario usuario;
 
     public Long getId() {
-        return id;
+        return this.Id;
     }
 
     public void setId(Long id) {
-        this.id = id;
+        this.Id = id;
     }
 
     public String getTitulo() {
-        return titulo;
+        return this.titulo;
     }
 
     public void setTitulo(String titulo) {
@@ -52,7 +53,7 @@ public class Postagem {
     }
 
     public String getTexto() {
-        return texto;
+        return this.texto;
     }
 
     public void setTexto(String texto) {
@@ -60,7 +61,7 @@ public class Postagem {
     }
 
     public LocalDateTime getData() {
-        return data;
+        return this.data;
     }
 
     public void setData(LocalDateTime data) {
